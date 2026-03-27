@@ -1,0 +1,33 @@
+{
+  "name": "reactbasics",
+  "version": "1.0.0",
+  "description": "this is recat learning app",
+  "keywords": [
+    "react",
+    "frontend"
+  ],
+  "homepage": "https://github.com/Darknight3377/React_Learnings#readme",
+  "bugs": {
+    "url": "https://github.com/Darknight3377/React_Learnings/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Darknight3377/React_Learnings.git"
+  },
+  "license": "ISC",
+  "author": "Raj Prince",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browsersList" : [
+    "last 3 versions"
+  ]
+}
