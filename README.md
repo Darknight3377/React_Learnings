@@ -1,6 +1,6 @@
 <!-- This is a readme file --> 
 
-# Parcel
+# Parcel (Day 2)
 - parcel is bundler to bundle project, 
 - ^means any minor version it can upgrade,
 - ~ means any next major version it can install
@@ -23,3 +23,14 @@
 - tree shaking (remove unused code)
 - more at parceljs.org
 - different dev & prod builds
+
+# Swiggy APP planning (Day 4)
+- Logo inside Header , Links, Home, Contact
+- Body
+    - Search
+    - Restaurant container
+        - Cards
+- Footer copyright etc
+
+- config driven UI
+    - based on config from api data, UI will change
