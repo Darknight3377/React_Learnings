@@ -34,3 +34,20 @@
 
 - config driven UI
     - based on config from api data, UI will change
+
+
+# Export/import types
+- Default export: export default Header
+    - Imported like : import Header
+- Named export: export const ABC;
+    - Imported like: import {ABC}
+
+# React hooks
+- React utility js functions with some powerful features
+- re renders the page when component state variable changes
+
+# Reconciliation algorithm (also known as react fiber) from react 16
+- whenever UI changes, react creates a virtual dom (representation of actual dom)
+- this virtual dom a is react element object. //console.log(<Body/>)
+- this works on diff algorithm ( compare & find difference between 2 state objects of virtual dom)
+- updates the dom with new changes, so react is fast because it does efficient rendering.
