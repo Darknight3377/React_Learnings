@@ -44,10 +44,23 @@
 
 # React hooks
 - React utility js functions with some powerful features
-- re renders the page when component state variable changes
+- re renders the whole component when its state variable changes /trigger reconciliation cycle
+- and only updates the change in virtual dom
+- useEffect's callback function is called after component renders
 
 # Reconciliation algorithm (also known as react fiber) from react 16
 - whenever UI changes, react creates a virtual dom (representation of actual dom)
 - this virtual dom a is react element object. //console.log(<Body/>)
 - this works on diff algorithm ( compare & find difference between 2 state objects of virtual dom)
 - updates the dom with new changes, so react is fast because it does efficient rendering.
+
+# Monolith
+- Huge application -> UI code, backend code, api code, authentication code, db code, all in one project. any small change needed to compile whole big project.
+
+# Microservices
+- different services/app combines to create a big app (known as separation of projects)
+- BE, UI, Auth, Messaging services (no single tech stack)
+- talk to each other ( each service are running on diff ports and each app hit other needed app endpoints/ports)
+
+# React api integration
+- UI loads -> render page -> api call -> re render page
