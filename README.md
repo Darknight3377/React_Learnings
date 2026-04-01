@@ -44,9 +44,12 @@
 
 # React hooks
 - React utility js functions with some powerful features
+- useState is used to create local state variables of a component dont use usestate outside body of component
 - re renders the whole component when its state variable changes /trigger reconciliation cycle
 - and only updates the change in virtual dom
-- useEffect's callback function is called after component renders
+- useEffect's callback function is called after component renders (after every time the component render) if no dependency array
+- if dependency array is empty, useEffect is called on initial render (only once)
+- if a variable is there in dependency array, every time variable changes useeffect gets called
 
 # Reconciliation algorithm (also known as react fiber) from react 16
 - whenever UI changes, react creates a virtual dom (representation of actual dom)
@@ -64,3 +67,7 @@
 
 # React api integration
 - UI loads -> render page -> api call -> re render page
+
+# 2types of routing
+- Client side routing (When I load the app, all the routes have corresponding pages ), single page application
+- server side routing( when I hit /about, it will hit server and fetch about us page and reload the app)
