@@ -71,3 +71,12 @@
 # 2types of routing
 - Client side routing (When I load the app, all the routes have corresponding pages ), single page application
 - server side routing( when I hit /about, it will hit server and fetch about us page and reload the app)
+
+# component lifecycle
+- First parent constructor will be called, then parent render , if any child class is there in render, its constructor will be called, then child render, then child's component did mount and at last parent component did mount
+- we use component did mount to call apis
+- in case of multiple childs, childs constructor & render will be called, then both childs component did mount will be called, then parent did mount. React optimises by batching render phase of child components
+- more at : https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+-If we have a set interval in component did mount, it will be called always when this component mounts. Even if we go to other component, it is not cleared and keep on running which will bring down application performance. we need to clear these in component will unmount.
+- for function based components, useffct has a return call back method, where we can do clean up.
+
