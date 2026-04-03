@@ -10,7 +10,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <div className="m-4">
       <Header />
       <Outlet /> 
       {/* //replace with the body component when we are in home page and replace with about component when we are in about page */}

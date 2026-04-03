@@ -15,8 +15,8 @@ class About extends React.Component {
     // console.log("Parent render");
     return (
       <div>
-        <h1>About Us</h1>
-        <p>
+        <h1 className="font-bold text-xl">About Us</h1>
+        <p className="text-gray-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
           voluptate.
         </p>

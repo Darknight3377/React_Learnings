@@ -84,3 +84,6 @@
 - Bundling/Chunking/code splitting/ on demand rendering
 - all done through lazy loading provided by react
 - help build our apps into multiple chunks, faster build & render
+
+# tailwind
+- postcssrc tells parcel the way tailwind is written in the project

@@ -11,15 +11,15 @@ const RestaurantMenu = () => {
   const itemCards = (resInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
 
   return (
-    <div className="restaurant-menu">
-      <h1>Restaurant Menu</h1>
+    <div className="p-4">
+      <h1 className="text-xl font-bold">Restaurant Menu</h1>
       <ul>
         {
           itemCards?.map((item) => (
             <li key={item.card.info.id}>
-                <h3>{item.card.info.name}</h3>
-                <h4>{item.card.info.price / 100} Rs</h4>
-                <p>{item.card.info.description}</p>
+                <h3 className="font-bold text-lg py-2">{item.card.info.name}</h3>
+                <h4 className="text-lg font-bold">₹{item.card.info.price / 100}</h4>
+                <p className="text-gray-600">{item.card.info.description}</p>
             </li>
           ))}
       </ul>
