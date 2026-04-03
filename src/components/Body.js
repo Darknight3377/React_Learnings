@@ -1,12 +1,14 @@
 import RestaurantCards from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
 
     const [resList, setResList] = useState([]);
     const [searchText, setSearchText] = useState("");
     const [filteredResList, setFilteredResList] = useState([]);
+    const onlineStatus = useOnlineStatus();
     useEffect(()=> {
         fetchData();
     },[]) // called after first render, empty dependency array means it will run only once, if we have any state variable in the dependency array then it will run when that state variable changes
@@ -31,6 +33,8 @@ const Body = () => {
         setFilteredResList(searchData);
         // console.log(searchData);
     }
+
+    if(!onlineStatus) return <h1>Offline, please check your internet connection</h1>
 
     return filteredResList.length === 0 ? <Shimmer /> : (
         <div className="body">

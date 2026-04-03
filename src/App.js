@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -12,11 +12,13 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Outlet /> //replace with the body component when we are in home page and replace with about component when we are in about page
+      <Outlet /> 
+      {/* //replace with the body component when we are in home page and replace with about component when we are in about page */}
     </div>
   );
 };
 
+const Grocery = lazy(() => import("./components/Grocery"));
 const appRoutes = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +31,10 @@ const appRoutes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/grocery",
+        element: <Suspense fallback="Loading..."><Grocery /></Suspense>,
       },
       {
         path: "/contact",

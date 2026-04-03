@@ -80,3 +80,7 @@
 -If we have a set interval in component did mount, it will be called always when this component mounts. Even if we go to other component, it is not cleared and keep on running which will bring down application performance. we need to clear these in component will unmount.
 - for function based components, useffct has a return call back method, where we can do clean up.
 
+# Optimizing
+- Bundling/Chunking/code splitting/ on demand rendering
+- all done through lazy loading provided by react
+- help build our apps into multiple chunks, faster build & render
