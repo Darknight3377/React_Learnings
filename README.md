@@ -87,3 +87,24 @@
 
 # tailwind
 - postcssrc tells parcel the way tailwind is written in the project
+
+# Higher order component
+- is a component that Takes a component & return a component(modified/enhanced)
+- these are pure components, means we are not changing directly in current component, we are adding on top of it.
+
+# controlled vs uncontrolled component
+- if a component behaviour is dependent/controlled by other component it is known as controlled component. Here we are showing Restaurant category by sending true/false from Restaurantmenu component. So restaurant category is controlled component. Else component is uncontrolled.
+
+# lifting state up
+- whenever a state needs to be shared with siblings. We lift the state up to the closest common ancestor to make it sole source of truth. In our project example is accordion expand from restarurant category(child) to restaurent menu(parent).
+- learn more at react dev lifitng state up
+
+# props drilling
+- passing props to multiple hierarchy
+- Context api is solution for props drilling (data that can be used at multiple places)
+- setting value in context using context provider and set value to this context
+- what will be output of if set context provider at whole app level, then setting context provider at just header level?
+- all places will be app level, header will be showing header level value
+- we can also pass a setter function for updating context api value in usecontext
+- Global scope updated by context api, lazy loaded components also get updated value from context api, even though the component is not loaded, when we load that component it will have updated value.
+- Context api is fine for small to medium apps, redux is external library to manage state data, redux comes with other powerful feautes too
