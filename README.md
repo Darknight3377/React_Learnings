@@ -108,3 +108,31 @@
 - we can also pass a setter function for updating context api value in usecontext
 - Global scope updated by context api, lazy loaded components also get updated value from context api, even though the component is not loaded, when we load that component it will have updated value.
 - Context api is fine for small to medium apps, redux is external library to manage state data, redux comes with other powerful feautes too
+
+# React Redux & redux toolkit
+- Redux is used as it enables handling state of moderate to high application & easier debugging
+- Redux toolkit is standard way of writing redux logic
+- 3 problems solved by redux toolkit
+    - Configuring store is too much complicated
+    - Lot of dependent libraries need to be used to make redux
+    - Too much boilerplate code
+- Architecture of redux toolkit
+    - A store is divided into multiple logical slices
+    - In our app, when we click add to cart, it dispatches an action which calls a reducer function which modifies the slice of redux store
+    - To read data from store, we use a selector which shows updated data from store in UI(also known as subscribing to store). Make sure to subscribe to small portion of store(if you subscribe to whole store anything changed in store, our app will re renddr due to subscription), only update UI if corresponding slice got changed
+    - Store is a combination of multiple reducers, each slice is a combination of multiple reducers actions
+
+# Other points related to redux toolkit
+- In older redux, we don't use to mutate stae, earlier we used to create duplicate of state and return updated copied state
+- But in redux toolkit, we have to mutate state, and no need to return. Redux takes care of it. Behnid the scenes redux is copying the old state, update the state and return the updated state using Immer library(takes the stae current generate diff and return the diff of states)
+- If we use, state = [], it clears local state variable not the original state variable
+- RTK says either mutate state or return a new state
+    - clear state
+        - state.item.length = 0 (mutate the existing original state)
+        - or return {items: []} (this new state will replace inside original state)
+- For more information, Read RTK query & explore
+
+# useMemo, useCallback & useRef
+- useMemo is a react hook that lets you cache the result of a calculated between re-renders
+- useCallback is a react hook that lets you cache the function between re-renders
+- useRef - if you want to hold value/persist between re-renders

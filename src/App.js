@@ -8,6 +8,9 @@ import ContactUs from "./components/ContactUs";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const AppLayout = () => {
   const [userName, setUserName] = React.useState();
@@ -18,6 +21,7 @@ const AppLayout = () => {
     setUserName("Prince Raj");
   }, []);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ loggedInUser: userName , setUserName}}>
       <div className="m-4">
         <Header />
@@ -25,6 +29,7 @@ const AppLayout = () => {
         {/* //replace with the body component when we are in home page and replace with about component when we are in about page */}
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -41,6 +46,10 @@ const appRoutes = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
       {
         path: "/grocery",
